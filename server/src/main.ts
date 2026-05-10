@@ -17,20 +17,33 @@
 // bootstrap();
 
 
+// import { NestFactory } from '@nestjs/core';
+// import { AppModule } from './app.module';
+
+// async function bootstrap() {
+//   const app = await NestFactory.create(AppModule);
+
+//   app.enableCors({
+//     origin: [
+//       'http://localhost:5174',
+//       'http://localhost:3000',
+//       'https://ima-secret-kitchen.onrender.com'
+//     ],
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//   });
+
+//   await app.listen(process.env.PORT ?? 3000);
+// }
+// bootstrap();
+
+
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  app.enableCors({
-    origin: [
-      'http://localhost:5174',
-      'http://localhost:3000',
-      'https://ima-secret-kitchen.onrender.com'
-    ],
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  });
+  app.enableCors();
 
   await app.listen(process.env.PORT ?? 3000);
 }
