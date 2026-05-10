@@ -5,7 +5,12 @@ import { useParams } from "react-router-dom";
 export default function CategoryPage() {
   const { name } = useParams();
   const [recipes, setRecipes] = useState<any[]>([]);
-
+useEffect(() => {
+  fetch("https://ima-secret-kitchen.onrender.com/recipes")
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
+}, []);
   useEffect(() => {
     getRecipes().then((data) => {
       console.log("DATA FROM SERVER:", data);

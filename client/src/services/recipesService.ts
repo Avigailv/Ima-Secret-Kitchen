@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 export const getRecipes = async (category?: string) => {
   const url = category
@@ -6,6 +6,9 @@ export const getRecipes = async (category?: string) => {
     : `${BASE_URL}/recipes`;
 
   const res = await fetch(url);
+  if (!res.ok) {
+  throw new Error("API error");
+}
   return res.json();
 };
 

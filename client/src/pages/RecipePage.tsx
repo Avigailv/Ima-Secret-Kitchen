@@ -1,49 +1,49 @@
-// import { useParams } from "react-router-dom";
-
-// export default function RecipePage() {
-//   const { id } = useParams();
-
-//   return (
-//     <div>
-//       <h1>מתכון מספר {id}</h1>
-
-//       <img src="https://via.placeholder.com/300" />
-
-//       <h3>רכיבים</h3>
-//       <ul>
-//         <li>קמח</li>
-//         <li>סוכר</li>
-//         <li>שוקולד</li>
-//       </ul>
-
-//       <h3>הוראות הכנה</h3>
-//       <p>מערבבים הכל ואופים 30 דקות.</p>
-//     </div>
-//   );
-// }
-
-
-
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getRecipeById } from "../services/recipesService";
 
+type Recipe = {
+  id: number;
+  title: string;
+  imageUrl: string;
+  ingredients: string;
+  instructions: string;
+};
+
 export default function RecipePage() {
   const { id } = useParams();
-  const [recipe, setRecipe] = useState<any>(null);
+  const [recipe, setRecipe] = useState<Recipe | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (id) {
-      getRecipeById(id).then(setRecipe);
-    }
+    const loadRecipe = async () => {
+      try {
+        if (!id) return;
+
+        const data = await getRecipeById(id);
+        setRecipe(data);
+      } catch (err) {
+        console.error("Error loading recipe:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadRecipe();
   }, [id]);
 
-  if (!recipe) return <p>טוען...</p>;
+  if (loading) return <p>טוען...</p>;
+  if (!recipe) return <p>מתכון לא נמצא</p>;
 
   return (
     <div>
       <h1>{recipe.title}</h1>
-      <img src={recipe.imageUrl} width="300" />
+
+      <img
+        src={recipe.imageUrl}
+        width="300"
+        alt={recipe.title}
+      />
 
       <h3>רכיבים</h3>
       <p>{recipe.ingredients}</p>
