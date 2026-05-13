@@ -45,14 +45,13 @@ async function bootstrap() {
 
   app.enableCors({
   origin: [
-  'http://localhost:5173',
-  'http://localhost:5174',
-  'https://ima-secret-kitchen.onrender.com',
-  'https://your-frontend-domain.com'
-],
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    credentials: true,
-  });
+    'http://localhost:5173',
+    'http://localhost:5174',
+    'https://ima-secret-kitchen.vercel.app',
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true,
+});
 
   await app.listen(process.env.PORT ?? 3000);
 }
