@@ -29,7 +29,7 @@ export default function Footer() {
             <div className="footer-bottom">
                 <p>
                     © {currentYear} נבנה ע"י{" "}
-                    <a href="mailto:avi605205@gmail.com">
+                    <a href="mailto:avi605205@gmail.com" className="footer-link">
                         אביגיל קליין
                     </a>
                 </p>

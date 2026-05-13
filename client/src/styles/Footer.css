@@ -52,3 +52,15 @@
   font-size: 0.85rem;
   color: #b2bec3;
 }
+
+.footer-link {
+  color: #aa3bff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #8728cc;
+  text-decoration: underline;
+}
