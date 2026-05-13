@@ -12,7 +12,15 @@ export const getRecipes = async (category?: string) => {
   return res.json();
 };
 
+// export const getRecipeById = async (id: string) => {
+//   const res = await fetch(`${BASE_URL}/recipes/${id}`);
+//   return res.json();
+// };
+
 export const getRecipeById = async (id: string) => {
-  const res = await fetch(`${BASE_URL}/recipes/${id}`);
-  return res.json();
+  const response = await fetch(
+    `https://ima-secret-kitchen.onrender.com/recipes/${id}`
+  );
+
+  return response.json();
 };

@@ -39,12 +39,14 @@ export default function RecipePage() {
     <div>
       <h1>{recipe.title}</h1>
 
-      <img
+      {/* <img
         src={recipe.imageUrl}
         width="300"
         alt={recipe.title}
-      />
-
+      /> */}
+{recipe.imageUrl && (
+  <img src={recipe.imageUrl} width="200" />
+)}
       <h3>רכיבים</h3>
       <p>{recipe.ingredients}</p>
 

@@ -4,7 +4,9 @@ import CategoryPage from "./pages/CategoryPage";
 import RecipePage from "./pages/RecipePage";
 import AdminPage from "./pages/AdminPage";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import TestPage from "./test/page"
+
 function App() {
   return (
     <BrowserRouter>
@@ -18,6 +20,7 @@ function App() {
         <Route path="/admin" element={<AdminPage />} />
 
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

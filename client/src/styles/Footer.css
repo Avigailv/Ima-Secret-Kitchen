@@ -1,0 +1,54 @@
+.main-footer {
+  background-color: #2d3436; /* צבע כהה שנותן קונטרסט יפה לסוף הדף */
+  color: #f1f2f6;
+  padding: 40px 20px 10px;
+  direction: rtl;
+  margin-top: 50px; /* רווח מהתוכן שלמעלה */
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  text-align: center;
+}
+
+.footer-section h3, .footer-section h4 {
+  color: #ff9f43; /* כתום חם כמו בעיצוב של דף הבית */
+  margin-bottom: 15px;
+}
+
+.footer-section p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #f1f2f6;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #ff9f43;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  border-top: 1px solid #636e72;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #b2bec3;
+}
