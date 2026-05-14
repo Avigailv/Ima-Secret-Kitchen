@@ -3,7 +3,7 @@ import { RecipesService } from './recipes.service';
 
 @Controller('recipes')
 export class RecipesController {
-  constructor(private readonly recipesService: RecipesService) {}
+  constructor(private readonly recipesService: RecipesService) { }
 
   @Post()
   create(@Body() body: any) {
@@ -15,6 +15,10 @@ export class RecipesController {
     return this.recipesService.findAll();
   }
 
+  // @Get('latest')
+  // findLatest() {
+  //   return this.recipesService.findLatest();
+  // }
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.recipesService.findOne(Number(id));

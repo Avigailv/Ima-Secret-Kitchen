@@ -105,9 +105,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="footer">
-        <p>נבנה באהבה על ידי הילדים של אמא | 2024</p>
-      </footer>
+   
     </div>
   );
 }

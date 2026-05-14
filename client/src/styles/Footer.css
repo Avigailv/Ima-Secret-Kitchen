@@ -3,7 +3,7 @@
   color: #f1f2f6;
   padding: 40px 20px 10px;
   direction: rtl;
-  margin-top: 50px; /* רווח מהתוכן שלמעלה */
+  /* margin-top: 50px; רווח מהתוכן שלמעלה */
 }
 
 .footer-content {
@@ -41,7 +41,7 @@
 }
 
 .footer-links a:hover {
-  color: #ff9f43;
+  color: #fd5252;
 }
 
 .footer-bottom {
@@ -54,13 +54,13 @@
 }
 
 .footer-link {
-  color: #aa3bff;
+  color: #ff9f43;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
 }
 
 .footer-link:hover {
-  color: #8728cc;
+  color: #fafbfc;
   text-decoration: underline;
 }

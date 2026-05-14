@@ -5,7 +5,7 @@ import { PrismaService } from '../prisma/prisma.service';
 
 @Injectable()
 export class RecipesService {
-  constructor(private prisma: PrismaService) {}
+  constructor(private prisma: PrismaService) { }
 
   create(data: any) {
     return this.prisma.recipe.create({
@@ -16,8 +16,18 @@ export class RecipesService {
   findAll() {
     return this.prisma.recipe.findMany({
       orderBy: { createdAt: 'desc' },
+            take: 8,
+
     });
   }
+
+  // findLatest() {
+  //   return this.prisma.recipe.findMany({
+  //     orderBy: { createdAt: 'desc' },
+  //     take: 8,
+  //   });
+  // }
+
 
   findOne(id: number) {
     return this.prisma.recipe.findUnique({

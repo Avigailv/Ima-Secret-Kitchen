@@ -8,12 +8,12 @@
 
 /* באנר עליון */
 .hero-banner {
-  background-color: #ff9f43; /* צבע כתום חם */
-  background-image: radial-gradient(#feca57 1px, transparent 1px);
+  background-color: #fd5252; /* צבע כתום חם */
+  background-image: radial-gradient(#f57e7e 1px, transparent 1px);
   background-size: 20px 20px; /* טקסטורה עדינה של נקודות */
   padding: 60px 20px;
   text-align: center;
-  border-bottom: 5px solid #ee5253;
+  border-bottom: 5px solid #ff0101;
 }
 
 .main-title {
